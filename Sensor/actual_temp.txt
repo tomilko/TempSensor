@@ -1,0 +1,6 @@
+#!/bin/bash	
+#curl -XGET 192.168.88.250:5001/api/choice/raspberrypi >> echo
+temp="$(curl -XGET --silent "192.168.88.250:5001/api/choice/raspberrypi")"
+
+temp=${temp//[^0-9]/}
+echo $temp > /home/solomon/curr_temp.txt
